@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Tandoori Tadka</title>
+    <link rel="stylesheet" href="src/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+
+    <style>
+        /* Custom Scrollbar */
+
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1b1d21;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #facc15;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="font-poppins">
+
+    <!-- Navigation Menu -->
+    <nav
+        class="sticky top-0 left-0 right-0 z-30 bg-slate-950 flex justify-between p-5 font-bold text-white items-center ">
+        <div class="text-2xl cursor-pointer">
+            <a href="index.html"><img src="img/icon.png" alt="" class="h-10 ml-5"></a>
+        </div>
+
+        <!-- Hamburger Menu for Mobile -->
+        <div class="md:hidden flex items-center">
+            <button class="text-4xl flex items-center focus:outline-none" onclick="toggleMenu()">
+                &equiv;
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="absolute z-10 top-full left-0 w-full bg-slate-950 text-white p-5 flex flex-col hidden space-y-4 md:hidden">
+            <a href="index.html" class="hover:text-yellow-400 cursor-pointer">Home</a>
+            <a href="#menu" class="hover:text-yellow-400">Menu</a>
+            <a href="about.html" class="hover:text-yellow-400">About Us</a>
+            <a href="about.html#contact" class="hover:text-yellow-400">Contact</a>
+            <a href="registration.html"
+                class="bg-yellow-400 text-black px-4 py-2 hover:bg-yellow-500 text-center">Register</a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:block">
+            <ul class="md:flex space-x-8 items-center">
+                <li><a href="index.html" class="hover:text-yellow-400 cursor-pointer">Home</a></li>
+                <li><a href="#menu" class="hover:text-yellow-400">Menu</a></li>
+                <li><a href="about.html" class="hover:text-yellow-400">About Us</a></li>
+                <li><a href="about.html#contact" class="hover:text-yellow-400">Contact</a></li>
+                <li>
+                    <a href="registration.html">
+                        <button class="bg-yellow-400 text-black px-4 py-2 hover:bg-yellow-500">Register</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="relative bg-center bg-cover bg-no-repeat" style="background-image: url('img/bg.jpg'); height: 60vh;">
+
+        
+        <div class="relative z-20 flex flex-col items-center justify-center h-full">
+            <h1 class="font-bold text-5xl text-yellow-500">About Us</h1>
+        </div>
+    </header>
+
+    <!-- Our Story Section -->
+    <section id="our-story" class="flex flex-col md:flex-row items-center my-16 px-10 md:px-20">
+        <div class="md:w-1/2">
+            <img src="img/restaurant.jpg" alt="Our Restaurant"
+                class="h-[400px] w-[500px] object-cover object-center shadow-xl">
+        </div>
+        <div class="md:w-1/2 md:pl-10 text-center md:text-left mt-8 md:mt-0">
+            <h2 class="text-5xl font-bold text-slate-900 mb-6">Our Story</h2>
+            <p class="text-lg text-slate-700">
+                Tandoori Tadka was born from a passion for authentic Indian cuisine, bringing the rich and diverse
+                flavors of India to your plate. Since our inception, we have focused on crafting dishes that are not
+                only delicious but also steeped in tradition. Whether it's a family gathering or a special event, we aim
+                to create memorable experiences for all our guests.
+            </p>
+            <p class="text-lg text-slate-700 mt-4">
+                With a commitment to quality ingredients and time-honored recipes, our chefs blend spices and flavors to
+                bring out the best in every dish. From starters to desserts, each offering tells a story of India's
+                culinary heritage.
+            </p>
+        </div>
+    </section>
+
+    <!-- Meet the Chefs Section -->
+    <section id="chefs" class="my-16 px-10 md:px-20 flex flex-col items-center">
+        <h2 class="text-center text-5xl font-bold text-slate-900 ">Meet the Chefs</h2>
+        <div class="h-2 w-40 bg-yellow-400 mt-3 mb-10"></div>
+
+
+        <!-- Chef 1 -->
+        <div class="flex flex-col md:flex-row items-center mb-16">
+            <div class="md:w-1/2">
+                <img src="img/chef1.jpg" alt="Chef A"
+                    class="shadow-xl mx-auto h-[400px] w-[400px] object-top object-cover">
+            </div>
+            <div class="md:w-1/2 md:pl-10 text-center md:text-left mt-8 md:mt-0">
+                <h3 class="text-4xl font-bold text-slate-900 mb-4">Chef Akshat Jha</h3>
+                <p class="text-lg text-slate-700">
+                    Chef Akshat Jha specializes in traditional North Indian cuisine, mastering the art of the tandoor.
+                    His dedication to authenticity and attention to detail ensures that every dish carries the rich
+                    flavors of India's northern regions.
+                </p>
+            </div>
+        </div>
+
+        <!-- Chef 2 -->
+        <div class="flex flex-col md:flex-row-reverse items-center mb-16">
+            <div class="md:w-1/2">
+                <img src="img/chef2.jpg" alt="Chef B"
+                    class="  shadow-xl mx-auto h-[400px] w-[400px] object-top object-cover ">
+            </div>
+            <div class="md:w-1/2 md:pr-10 text-center md:text-right mt-8 md:mt-0">
+                <h3 class="text-4xl font-bold text-slate-900 mb-4">Chef Aarushi Vashisht</h3>
+                <p class="text-lg text-slate-700">
+                    Chef Aarushi Vashisht brings a modern twist to Indian cuisine, blending traditional methods with
+                    contemporary flavors. Her innovative approach to food has won the hearts of many, creating a unique
+                    dining experience at Tandoori Tadka.
+                </p>
+            </div>
+        </div>
+
+        <!-- Chef 3 -->
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2">
+                <img src="img/chef3.png" alt="Chef C"
+                    class="  shadow-xl mx-auto h-[400px] w-[400px] object-top object-cover">
+            </div>
+            <div class="md:w-1/2 md:pl-10 text-center md:text-left mt-8 md:mt-0">
+                <h3 class="text-4xl font-bold text-slate-900 mb-4">Chef Vivek Aggarwal</h3>
+                <p class="text-lg text-slate-700">
+                    Chef Vivek Aggarwal is the master of spices, crafting flavorful curries and dishes that take you on
+                    a culinary journey across India. His expertise lies in balancing the spices to bring out the true
+                    essence of every ingredient.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Form -->
+    <section id="contact" class="text-center flex flex-col items-center w-80 md:w-full  py-10 mx-auto">
+        <h1 class="text-5xl font-bold text-slate-900">Contact Us!</h1>
+        <div class="h-1 w-20 bg-yellow-400 my-4"></div>
+        <form action="post" class="flex flex-col space-y-6 bg-white p-8 rounded-lg shadow-lg w-full max-w-xl">
+            <!-- Name Field -->
+            <div class="flex flex-col">
+                <label for="name" class="font-semibold text-left mb-2 text-lg text-slate-700">Enter your name:</label>
+                <input type="text" id="name"
+                    class="border border-gray-300 px-4 py-2 rounded-md text-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                    placeholder="Your Name">
+            </div>
+
+            <!-- Email Field -->
+            <div class="flex flex-col">
+                <label for="mail" class="font-semibold text-left mb-2 text-lg text-slate-700">Enter your email:</label>
+                <input type="email" id="mail"
+                    class="border border-gray-300 px-4 py-2 rounded-md text-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                    placeholder="Your Email">
+            </div>
+
+            <!-- Message Field -->
+            <div class="flex flex-col">
+                <label for="msg" class="font-semibold text-left mb-2 text-lg text-slate-700">Enter your message:</label>
+                <textarea name="msg" id="msg" cols="30" rows="6"
+                    class="border border-gray-300 px-4 py-2 rounded-md text-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                    placeholder="Your Message"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-center">
+                <button type="submit"
+                    class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50">
+                    Send Message
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <section id="map" class="flex items-center my-20 justify-center">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6279074316703!2d77.03587817539139!3d28.6109374756766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d05dd375e5a13%3A0x108adaa3abe4bd07!2sNetaji%20Subhas%20University%20of%20Technology!5e0!3m2!1sen!2sin!4v1727941554821!5m2!1sen!2sin"
+            width="900" height="500" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-900 text-white py-10 px-5">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-yellow-400 text-xl mb-4">Contact Information</h4>
+                <p>Address: 123, Sec-3, Dwarka, Delhi, India</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Email: tandooritadka@gmail.com</p>
+            </div>
+
+            <!-- Social Media Links -->
+            <div>
+                <h4 class="text-yellow-400 text-xl mb-4">Follow Us</h4>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-yellow-500">Facebook</a></li>
+                    <li><a href="#" class="hover:text-yellow-500">Instagram</a></li>
+                    <li><a href="#" class="hover:text-yellow-500">Twitter</a></li>
+                </ul>
+            </div>
+
+            <!-- Opening Hours -->
+            <div>
+                <h4 class="text-yellow-400 text-xl mb-4">Opening Hours</h4>
+                <p> 9:00 AM - 11:00 PM</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

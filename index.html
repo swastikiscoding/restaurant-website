@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tandoori Tadka | Restaurant Website</title>
+    <link rel="stylesheet" href="src/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+
+    <style>
+        .preloader {
+            background: #1b1d21 url(img/spinner.gif) no-repeat center;
+            background-size: 20%;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 100;
+        }
+
+        /* Custom Scrollbar */
+
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1b1d21;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #facc15;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="font-poppins">
+
+    <!-- Custom Loading Screen -->
+    <div class="preloader"></div>
+
+    <!-- Navigation Menu -->
+    <nav
+        class="sticky top-0 left-0 right-0 z-30 bg-slate-950 flex justify-between p-5 font-bold text-white items-center ">
+        <div class="text-2xl cursor-pointer">
+            <a href="index.html"><img src="img/icon.png" alt="" class="h-10 ml-5"></a>
+        </div>
+
+        <!-- Hamburger Menu for Mobile -->
+        <div class="md:hidden flex items-center">
+            <button class="text-4xl flex items-center focus:outline-none" onclick="toggleMenu()">
+                &equiv;
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="absolute z-10 top-full left-0 w-full bg-slate-950 text-white p-5 flex flex-col hidden space-y-4 md:hidden">
+            <a href="index.html" class="hover:text-yellow-400 cursor-pointer">Home</a>
+            <a href="#menu" class="hover:text-yellow-400">Menu</a>
+            <a href="about.html" class="hover:text-yellow-400">About Us</a>
+            <a href="about.html#contact" class="hover:text-yellow-400">Contact</a>
+            <a href="registration.html"
+                class="bg-yellow-400 text-black px-4 py-2 hover:bg-yellow-500 text-center">Register</a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:block">
+            <ul class="md:flex space-x-8 items-center">
+                <li><a href="index.html" class="hover:text-yellow-400 cursor-pointer">Home</a></li>
+                <li><a href="#menu" class="hover:text-yellow-400">Menu</a></li>
+                <li><a href="about.html" class="hover:text-yellow-400">About Us</a></li>
+                <li><a href="about.html#contact" class="hover:text-yellow-400">Contact</a></li>
+                <li>
+                    <a href="registration.html">
+                        <button class="bg-yellow-400 text-black px-4 py-2 hover:bg-yellow-500">Register</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header
+        class="h-full md:h-screen md:py-0 pb-20 pt-10  bg-center bg-cover flex justify-center items-center bg-no-repeat relative"
+        style="background-image: url('img/bg.jpg');">
+
+        <!-- Content with Image -->
+        <div
+            class="flex flex-col md:flex-row items-center h-full justify-center md:justify-between px-5 md:space-x-6 md:px-20">
+            <!-- Text Content -->
+            <div
+                class="max-w-lg flex flex-col space-y-4 items-center md:items-start order-last md:order-first text-center md:text-left mt-10 md:mt-0">
+                <h1 class="text-yellow-400 font-bold text-4xl md:text-6xl">Tandoori Tadka</h1>
+                <p class="text-white text-lg ">
+                    Savor the rich and authentic flavors of our Tandoori dishes, made with love and passion. Whether you
+                    crave spicy delicacies or rich, creamy curries, we bring you the best from the heart of India.
+                </p>
+                <a href="#menu"
+                    class="mt-6 bg-yellow-400 text-black px-5 py-3 text-lg font-semibold hover:bg-yellow-500">Explore
+                    Our Menu</a>
+            </div>
+
+            <!-- Image on the Right Side -->
+            <div class="w-80 md:w-full max-w-2xl drop-shadow-2xl mt-10 md:mt-0">
+                <img src="img/pizza.png" alt="Delicious Pizza" class="w-full object-cover shadow-black">
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Menu Section -->
+    <section id="menu" class="text-center my-10 flex flex-col items-center">
+        <div class="container flex flex-col items-center">
+            <h1 class="text-slate-900 font-bold text-5xl">What we Offer?</h1>
+            <div class="h-2 w-20 bg-yellow-400 my-3"></div>
+        </div>
+
+        <!-- Starters -->
+        <div class="my-5 flex flex-col items-center">
+            <h1 class="text-slate-700 font-bold text-4xl  mx-4">STARTERS</h1>
+            <div class="starters grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
+                <div class="card max-w-80 my-10 mx-5">
+                    <img src="${item.image}" alt="${item.name}"
+                        class="hidden h-[200px] w-full object-cover object-center">
+                    <div>
+                        <h2 class="text-slate-800 font-bold text-2xl my-1">${item.name}</h2>
+                        <p class="text-lg text-slate-700">${truncatedDescription}</p>
+                        <div class="flex justify-between my-3">
+                            <p class="text-lg font-semibold">${item.price}</p>
+                            <button
+                                class="bg-yellow-500 hover:bg-yellow-400 text-white text-lg font-bold px-2 py-1">Order</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="p-2 text-lg bg-yellow-500 hover:bg-yellow-400 text-white"
+                onclick="toggleCards('starters')"><img src="img/unfold.png" alt="" class="h-8 w-8"></button>
+
+
+        </div>
+
+
+        <!-- Main Course Items -->
+        <div class="my-5 flex flex-col items-center">
+            <h1 class="text-slate-700 font-bold text-4xl  mx-4">MAIN COURSE</h1>
+            <div class="main-course grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
+
+            </div>
+            <button class="p-2 text-lg bg-yellow-500 hover:bg-yellow-400 text-white"
+                onclick="toggleCards('main-course')"><img src="img/unfold.png" alt="" class="h-8 w-8"></button>
+
+        </div>
+     
+     
+        
+        <!-- Beverages -->
+        <div class="my-5 flex flex-col items-center">
+            <h1 class="text-slate-700 font-bold text-4xl  mx-4">BEVERAGES</h1>
+            <div class="beverages grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 "></div>
+            <button class="p-2 text-lg bg-yellow-500 hover:bg-yellow-400 text-white"
+                onclick="toggleCards('beverages')"><img src="img/unfold.png" alt="" class="h-8 w-8"></button>
+        </div>
+
+
+        <!-- Desserts -->
+        <div class="my-5 flex flex-col items-center">
+            <h1 class="text-slate-700 font-bold text-4xl  mx-4">DESSERTS</h1>
+            <div class="desserts grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 "></div>
+            <button class="p-2 text-lg bg-yellow-500 hover:bg-yellow-400 text-white"
+                onclick="toggleCards('desserts')"><img src="img/unfold.png" alt="" class="h-8 w-8"></button>
+        </div>
+        </div>
+    </section>
+
+
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="text-center flex flex-col items-center my-20">
+        <div class="container flex flex-col items-center">
+            <h1 class="text-slate-900 font-bold text-5xl">Customer Reviews</h1>
+            <div class="h-2 w-20 bg-yellow-400 my-4"></div>
+
+        </div>
+
+        <div class="reviews grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10">
+            <!-- 1st Review -->
+            <div class="review-card bg-white shadow-lg p-6  text-left max-w-sm">
+                <div class="flex items-center mb-4">
+                    <img src="img/person1.jpg" alt="Customer Image" class="rounded-full h-16 w-16 object-cover mr-4">
+                    <div>
+                        <h2 class="font-bold text-xl text-slate-900">Rahul Sharma</h2>
+                        <p class="text-slate-600">Food Lover</p>
+                    </div>
+                </div>
+                <p class="text-slate-700">"The Tandoori dishes were incredible! The flavors were so rich and authentic,
+                    I felt like I was dining in the heart of India."</p>
+            </div>
+
+            <!-- 2nd Review -->
+            <div class="review-card bg-white shadow-lg p-6  text-left max-w-sm">
+                <div class="flex items-center mb-4">
+                    <img src="img/person2.jpg" alt="Customer Image" class="rounded-full h-16 w-16 object-cover mr-4">
+                    <div>
+                        <h2 class="font-bold text-xl text-slate-900">Aditi Verma</h2>
+                        <p class="text-slate-600">Food Blogger</p>
+                    </div>
+                </div>
+                <p class="text-slate-700">"Tandoori Tadka offers a perfect balance of spices. Every dish is an explosion
+                    of flavor! I'll definitely be coming back."</p>
+            </div>
+
+            <!-- 3rd Review -->
+            <div class="review-card bg-white shadow-lg p-6  text-left max-w-sm">
+                <div class="flex items-center mb-4">
+                    <img src="img/person3.jpg" alt="Customer Image" class="rounded-full h-16 w-16 object-cover mr-4">
+                    <div>
+                        <h2 class="font-bold text-xl text-slate-900">Vikram Mehta</h2>
+                        <p class="text-slate-600">Food Critic</p>
+                    </div>
+                </div>
+                <p class="text-slate-700">"A delightful experience! The curries were creamy and perfectly cooked. Highly
+                    recommended for anyone who loves authentic Indian cuisine."</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Map Using iFrame -->
+    <section id="map" class="flex items-center my-20 justify-center">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6279074316703!2d77.03587817539139!3d28.6109374756766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d05dd375e5a13%3A0x108adaa3abe4bd07!2sNetaji%20Subhas%20University%20of%20Technology!5e0!3m2!1sen!2sin!4v1727941554821!5m2!1sen!2sin"
+            width="900" height="500" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-900 text-white py-10 px-5">
+        <div class="mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-yellow-400 text-xl mb-4">Contact Information</h4>
+                <p>Address: 123, Sec-3, Dwarka, Delhi, India</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Email: tandooritadka@gmail.com</p>
+            </div>
+
+            <!-- Social Media Links -->
+            <div>
+                <h4 class="text-yellow-400 text-xl mb-4">Follow Us</h4>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-yellow-500">Facebook</a></li>
+                    <li><a href="#" class="hover:text-yellow-500">Instagram</a></li>
+                    <li><a href="#" class="hover:text-yellow-500">Twitter</a></li>
+                </ul>
+            </div>
+
+            <!-- Opening Hours -->
+            <div>
+                <h4 class="text-yellow-400 text-xl mb-4">Opening Hours</h4>
+                <p> 9:00 AM - 11:00 PM</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- linking external JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
